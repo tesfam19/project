@@ -1,0 +1,110 @@
+\documentclass{article}
+% \usepackage[spanish]{babel}
+% \usepackage{lipsum}
+% \usepackage{natbib}
+% \usepackage{graphicx}
+%\usepackage{analysis_orax}
+
+%-- define programing code style 
+\usepackage[utf8]{inputenc}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+
+%-------------------------TitlePage------------------------
+\begin{titlepage}
+Web Application using Flask
+\end{titlepage}
+
+%-------------------------Content------------------------
+
+\section{Introduction}
+
+\textbf{what is HTTP and what does it have to do with Flask?}
+
+HTTP is a protocol for websites. The internet uses it to interact and communicate with computers and servers.
+
+For example when a user tries to access a specific website HTTP request is sent to a server. The server receives the request and figures out how to respond to request. The server sends back an HTTP response that contains the information that browser needs. Then the browser displays the response from the server. 
+
+\textbf{How is Flask involved?}
+
+Flask will take care of the server side processing.
+
+\textbf{What is Flask?} 
+
+Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries. Flask depends on the Jinja template engine and the Werkzeug WSGI toolkit. It makes the process of designing a web application simpler. Flask lets us focus on what the users are requesting and what sort of response to give back.
+
+\subsection{How does a Flask app work?}
+
+The code lets us run a basic web application that we can serve, as if it were a website.
+
+\lstinputlisting[language=Octave]{main.py}
+
+\begin{itemize}
+\item L1: import Flask module for creating web server based on the module
+\item L3: specify current file. current file represent web application. app is an instance of Flask class which is a web application.
+\item L5: represent a default page
+\item L6-7: when a user visits the page, they will see the default page and the function below will be activated 
+\item L10: run the application. debug=True allows possible python errors to appear on the web page which allows us to trace errors.
+\item 
+\end{itemize}
+
+
+
+%    \begin{figure}[htb]
+ %   \centering
+  %    \includegraphics[width=1\textwidth]{figures/figure1.png}
+   %    \centering
+    %  \textcolor{Orange}{\textbf{\caption{Figure Description}}}\label{fig:1}
+    %\end{figure}
+
+\subsection{HTML, CSS, and virtual environments}
+
+The Flask Framework looks for HTML files in a folder called templates. We need to create a templates folder and put all our HTML files in there. The render$\_$template() method from flask framework looks for a template in the templates folder.
+
+To connect multiple pages we can use a navigation menu on the top. Flask can be used to make the process of creating a navigation menu easier.
+
+Let's create a template.html wich serves as a parent template. Our child templates will inherit code from it. This allows us to not have to copy the code for the navigation menu in the about.html and home.html
+
+As we have created a folder called templates to store all HTML templates, we need a folder called static to store our CSS, JavaScript, images, and other necessary files. 
+
+\section{Deploy your Web Application to the Cloud}
+
+To deploy our web application to the cloud, we will use Google App Engine (Standard Environment). This is an example of a Platform as a Service (PaaS).
+
+PaaS refers to the delivery of operating systems and associated services over the internet without downloads or installation. The approach lets customers create and deploy applications without having to invest in the underlying infrastructure.
+
+
+$https://www.freecodecamp.org/news/how-to-build-a-web-application-using-flask-and-deploy-it-to-the-cloud-3551c985e492/$
+
+
+
+\end{document}
